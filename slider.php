@@ -1,6 +1,5 @@
-<div id="carousel-example-generic" class="carousel slide container container_bg" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel container slider" data-ride="carousel">
     <!-- Indicators -->
-
     <div class="indicators-bg" style="width:<?php echo count($_arr_slider_posts)+3 ?>0pt;"></div>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">

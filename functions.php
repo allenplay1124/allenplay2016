@@ -1,4 +1,5 @@
 <?php
+include_once('theme-options.php');
 /**
  * 側邊欄.
  */

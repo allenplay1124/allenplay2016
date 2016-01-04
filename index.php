@@ -1,30 +1,27 @@
 <?php get_header(); ?>
 <?php get_slider()?>
-
 <?php
-	$_arr_uri = explode('/', $_SERVER['REQUEST_URI']);
-	if(isset($_GET['paged']) && $_GET['paged'] != '')
-		$args['offset'] = ((int)$_GET['paged'] - 1) * 6;
-	else if($_arr_uri[1] == 'page')
-		$args['offset'] = ((int)$_arr_uri[2] - 1) * 6;
-	else
-		$args['offset'] = 0;
-
-	$args['posts_per_page'] = 6;
+$args = array(
+	'posts_per_page'   => 5,
+	'offset'           => 0,
+	'category'         => array(7,14,35),
+	'category_name'    => '',
+	'orderby'          => 'date',
+	'order'            => 'DESC',
+	'include'          => '',
+	'exclude'          => '',
+	'meta_key'         => '',
+	'meta_value'       => '',
+	'post_type'        => 'post',
+	'post_mime_type'   => '',
+	'post_parent'      => '',
+	'author'	       => '',
+	'post_status'      => 'publish',
+	'suppress_filters' => true
+);
+$posts_array = get_posts( $args );
+echo_array($posts_array);
 ?>
-<?php $_arr_data = get_posts($args);?>
-<div class="container container_bg">
-    <div class="content">
-
-    </div>
-				<div class="clearfix"></div>
-				<?php wp_pagenavi(); ?>
-</div>
-
-
-
-
-
 <?php get_footer(); ?>
 
 <script>
